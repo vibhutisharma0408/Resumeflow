@@ -38,7 +38,6 @@ resume-builder/
 
 ## Video Walkthrough of the Project
 
-https://drive.google.com/file/d/1ppFAJ4i9ttLjXetk274APLZuto4jKnAv/view?usp=sharing
 
 ## Features
 
