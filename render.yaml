@@ -20,13 +20,10 @@ services:
       - key: FRONTEND_URL_DEPLOYED
         sync: false  # Set this after frontend is deployed
 
-  # Frontend Service
-  - type: web
+  # Frontend Service (Static Site)
+  - type: static
     name: resume-builder-frontend
-    env: node
-    plan: free
     buildCommand: cd frontend && npm install && npm run build
-    startCommand: cd frontend && npm run preview
     staticPublishPath: ./frontend/dist
     envVars:
       - key: VITE_API_BASE_URL
