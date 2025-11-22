@@ -15,27 +15,49 @@ const allowedOrigins = [
     process.env.FRONTEND_URL_DEPLOYED
 ].filter(Boolean); // Remove undefined values
 
-// Log allowed origins for debugging (remove in production if needed)
+// Log allowed origins for debugging
+console.log("=== CORS Configuration ===");
 console.log("Allowed CORS origins:", allowedOrigins);
+console.log("FRONTEND_URL_DEPLOYED:", process.env.FRONTEND_URL_DEPLOYED);
 
-app.use(cors({
+// CORS configuration with explicit preflight handling
+const corsOptions = {
     origin: function (origin, callback) {
-        // Allow requests with no origin (like mobile apps or curl requests)
-        if (!origin) return callback(null, true);
+        // Allow requests with no origin (like mobile apps, Postman, or curl requests)
+        if (!origin) {
+            console.log("Request with no origin - allowing");
+            return callback(null, true);
+        }
         
         // Check if origin is in allowed list
+        if (allowedOrigins.length === 0) {
+            // If no origins configured, allow all (for debugging - should be fixed)
+            console.warn("WARNING: No CORS origins configured! Allowing all origins.");
+            return callback(null, true);
+        }
+        
         if (allowedOrigins.indexOf(origin) !== -1) {
+            console.log("CORS allowed for origin:", origin);
             callback(null, true);
         } else {
             // Log blocked origin for debugging
-            console.log("CORS blocked origin:", origin);
+            console.log("CORS BLOCKED origin:", origin);
+            console.log("Allowed origins are:", allowedOrigins);
             callback(new Error('Not allowed by CORS'));
         }
     },
     credentials: true,
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization']
-}));
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH'],
+    allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
+    exposedHeaders: ['Content-Type', 'Authorization'],
+    preflightContinue: false,
+    optionsSuccessStatus: 204
+};
+
+app.use(cors(corsOptions));
+
+// Explicit OPTIONS handler for preflight requests (additional safety)
+app.options('*', cors(corsOptions));
 
 app.use(express.json());
 
