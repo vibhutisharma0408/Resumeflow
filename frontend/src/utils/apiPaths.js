@@ -1,4 +1,5 @@
-export const BASE_URL = "https://resume-builder-backend-0x50.onrender.com"
+// Get API base URL from environment variable, with fallback for local development
+export const BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:5000";
 
 export const API_PATHS = {
     AUTH: {
