@@ -5,7 +5,7 @@
 @theme {
   --font-display: "Urbanist", sans-serif;
   --breakpoint-3xl: 1920px;
-  --color-primary: #9328e7;
+  --color-primary: #2563eb;
 }
 
 @layer base {
@@ -14,7 +14,7 @@
   }
 
   body {
-    background-color: #fcfbfc;
+    background-color: #ffffff;
     overflow-x: hidden;
   }
 }
@@ -52,23 +52,23 @@
 }
 
 .input-box {
-  @apply w-full flex justify-between gap-3 text-sm text-black bg-gray-50/50 rounded px-4 py-3 mb-4 mt-3 border border-gray-100 outline-none focus-within:border-purple-300;
+  @apply w-full flex justify-between gap-3 text-sm text-black bg-gray-50/50 rounded px-4 py-3 mb-4 mt-3 border border-gray-200 outline-none focus-within:border-blue-400;
 }
 
 .btn-primary {
-  @apply w-full text-sm font-medium text-white bg-black shadow-lg shadow-purple-600/5 p-[10px] rounded-md my-1 hover:bg-purple-600/15 hover:text-black cursor-pointer;
+  @apply w-full text-sm font-medium text-white bg-orange-500 shadow-lg p-[10px] rounded-lg my-1 hover:bg-orange-600 cursor-pointer;
 }
 
 .btn-small {
-  @apply flex items-center gap-2 text-[13px] font-semibold text-white bg-linear-to-r from-purple-500/8 to-purple-700 px-5 py-1.5 rounded cursor-pointer;
+  @apply flex items-center gap-2 text-[13px] font-semibold text-white bg-blue-600 px-5 py-1.5 rounded-lg cursor-pointer hover:bg-blue-700;
 }
 
 .btn-small-light {
-  @apply flex items-center gap-2 text-[12px] font-semibold text-purple-800 bg-purple-600/15 border border-purple-50 hover:border-purple-400 px-3 py-1.5 rounded cursor-pointer;
+  @apply flex items-center gap-2 text-[12px] font-semibold text-blue-800 bg-blue-50 border border-blue-100 hover:border-blue-300 px-3 py-1.5 rounded-lg cursor-pointer;
 }
 
 .form-input {
-  @apply w-full text-sm text-black outline-none bg-white border border-slate-100 px-2.5 py-3 rounded-md mt-2 placeholder:text-gray-500 focus-within:border-purple-300;
+  @apply w-full text-sm text-black outline-none bg-white border border-gray-200 px-2.5 py-3 rounded-lg mt-2 placeholder:text-gray-500 focus-within:border-blue-400;
 }
 
 @keyframes fade-in {

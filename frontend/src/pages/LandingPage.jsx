@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react'
-import { ArrowRight, Download, LayoutTemplate, LogIn, Menu, X, Zap } from 'lucide-react';
+import { ArrowRight, ArrowUp, Download, LayoutTemplate, LogIn, Menu, X, Zap, CheckCircle, Rocket, Shield } from 'lucide-react';
 import { landingPageStyles } from '../assets/dummyStyle'
 import { UserContext } from "../contexts/UserContext"
 import { useNavigate } from 'react-router-dom'
@@ -30,10 +30,10 @@ function LandingPage() {
                 <div className={landingPageStyles.headerContainer}>
                     <div className={landingPageStyles.logoContainer}>
                         <div className={landingPageStyles.logoIcon}>
-                            <LayoutTemplate className={landingPageStyles.logoIconInner} />
+                            <ArrowRight className={landingPageStyles.logoIconInner} />
                         </div>
                         <span className={landingPageStyles.logoText}>
-                            ResumeBuilder
+                            RESUMEFLOW
                         </span>
                     </div>
                     <button className={landingPageStyles.mobileMenuButton}
@@ -91,18 +91,12 @@ function LandingPage() {
                 <section className={landingPageStyles.heroSection}>
                     <div className={landingPageStyles.heroGrid}>
                         <div className={landingPageStyles.heroLeft}>
-                            <div className={landingPageStyles.tagline}>
-                                Professional Resume Builder
-                            </div>
                             <h1 className={landingPageStyles.heading}>
-                                <span className={landingPageStyles.headingText}>Craft</span>
-                                <span className={landingPageStyles.headingGradient}>Professional</span>
-                                <span className={landingPageStyles.headingText}>Resumes</span>
+                                BUILD YOUR DREAM CAREER
                             </h1>
 
                             <p className={landingPageStyles.description}>
-                                Create job-winning resumes with expertly designed templates.
-                                ATS-friendly, recruiter-approved, and tailored to your career goals.
+                                Create a professional resume in minutes with our easy-to-use builder.
                             </p>
 
                             <div className={landingPageStyles.ctaButtons}>
@@ -110,94 +104,45 @@ function LandingPage() {
                                     onClick={handleCTA}>
                                     <div className={landingPageStyles.primaryButtonOverlay}></div>
                                     <span className={landingPageStyles.primaryButtonContent}>
-                                        Start Building
+                                        CREATE MY RESUME - IT'S FREE!
                                         <ArrowRight className={landingPageStyles.primaryButtonIcon} size={18} />
                                     </span>
                                 </button>
-
-                                <button className={landingPageStyles.secondaryButton} onClick={handleCTA}>
-                                    View Templates
-                                </button>
-                            </div>
-
-                            <div className={landingPageStyles.statsContainer}>
-                                {[
-                                    { value: '50K+', label: 'Resumes Created', gradient: 'from-violet-600 to-fuchsia-600' },
-                                    { value: '4.9★', label: 'User Rating', gradient: 'from-orange-500 to-red-500' },
-                                    { value: '5 Min', label: 'Build Time', gradient: 'from-emerald-500 to-teal-500' }
-                                ].map((stat, idx) => (
-                                    <div className={landingPageStyles.statItem} key={idx}>
-                                        <div className={`${landingPageStyles.statNumber} ${stat.gradient}`} >
-                                            {stat.value}
-                                        </div>
-                                        <div className={landingPageStyles.statLabel}>{stat.label}</div>
-                                    </div>
-                                ))}
+                                <p className="text-sm text-gray-500 mt-2">No credit card required</p>
                             </div>
                         </div >
                         <div className={landingPageStyles.heroIllustration}>
                             <div className={landingPageStyles.heroIllustrationBg}></div>
                             <div className={landingPageStyles.heroIllustrationContainer}>
-                                <svg
-                                    viewBox="0 0 400 500"
-                                    className={landingPageStyles.svgContainer}
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <defs>
-                                        <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                                            <stop offset="0%" stopColor="#8b5cf6" />
-                                            <stop offset="100%" stopColor="#d946ef" />
-                                        </linearGradient>
-                                        <linearGradient id="cardGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                                            <stop offset="0%" stopColor="#ffffff" />
-                                            <stop offset="100%" stopColor="#f8fafc" />
-                                        </linearGradient>
-                                    </defs>
-
-                                    <rect x="50" y="50" width="300" height="400" rx="20" className={landingPageStyles.svgRect} />
-                                    <circle cx="120" cy="120" r="25" className={landingPageStyles.svgCircle} />
-                                    <rect x="160" y="105" width="120" height="8" rx="4" className={landingPageStyles.svgRectPrimary} />
-                                    <rect x="160" y="120" width="80" height="6" rx="3" className={landingPageStyles.svgRectSecondary} />
-                                    <rect x="70" y="170" width="260" height="4" rx="2" className={landingPageStyles.svgRectLight} />
-                                    <rect x="70" y="185" width="200" height="4" rx="2" className={landingPageStyles.svgRectLight} />
-                                    <rect x="70" y="200" width="240" height="4" rx="2" className={landingPageStyles.svgRectLight} />
-                                    <rect x="70" y="230" width="60" height="6" rx="3" className={landingPageStyles.svgRectPrimary} />
-                                    <rect x="70" y="250" width="40" height="15" rx="7" className={landingPageStyles.svgRectSkill} />
-                                    <rect x="120" y="250" width="50" height="15" rx="7" className={landingPageStyles.svgRectSkill} />
-                                    <rect x="180" y="250" width="45" height="15" rx="7" className={landingPageStyles.svgRectSkill} />
-                                    <rect x="70" y="290" width="80" height="6" rx="3" className={landingPageStyles.svgRectSecondary} />
-                                    <rect x="70" y="310" width="180" height="4" rx="2" className={landingPageStyles.svgRectLight} />
-                                    <rect x="70" y="325" width="150" height="4" rx="2" className={landingPageStyles.svgRectLight} />
-                                    <rect x="70" y="340" width="200" height="4" rx="2" className={landingPageStyles.svgRectLight} />
-
-                                    <circle cx="320" cy="100" r="15" className={landingPageStyles.svgAnimatedCircle}>
-                                        <animateTransform
-                                            attributeName="transform"
-                                            type="translate"
-                                            values="0,0; 0,-10; 0,0"
-                                            dur="3s"
-                                            repeatCount="indefinite"
-                                        />
-                                    </circle>
-                                    <rect x="30" y="300" width="12" height="12" rx="6" className={landingPageStyles.svgAnimatedRect}>
-                                        <animateTransform
-                                            attributeName="transform"
-                                            type="translate"
-                                            values="0,0; 5,0; 0,0"
-                                            dur="2s"
-                                            repeatCount="indefinite"
-                                        />
-                                    </rect>
-                                    <polygon points="360,200 370,220 350,220" className={landingPageStyles.svgAnimatedPolygon}>
-                                        <animateTransform
-                                            attributeName="transform"
-                                            type="rotate"
-                                            values="0 360 210; 360 360 210; 0 360 210"
-                                            dur="4s"
-                                            repeatCount="indefinite"
-                                        />
-                                    </polygon>
-                                </svg>
+                                <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-lg">
+                                    <div className="flex gap-4 mb-6">
+                                        <div className="flex-1">
+                                            <div className="h-2 bg-blue-600 rounded mb-2"></div>
+                                            <div className="h-2 bg-gray-200 rounded w-3/4"></div>
+                                        </div>
+                                    </div>
+                                    <div className="space-y-4">
+                                        <div className="flex items-center gap-3 p-3 bg-blue-50 rounded-lg border border-blue-100">
+                                            <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center">
+                                                <ArrowUp className="w-4 h-4 text-white" />
+                                            </div>
+                                            <div className="flex-1">
+                                                <div className="h-2 bg-gray-300 rounded w-20 mb-1"></div>
+                                                <div className="h-2 bg-gray-200 rounded w-32"></div>
+                                            </div>
+                                        </div>
+                                        <div className="space-y-2">
+                                            <div className="h-2 bg-gray-200 rounded"></div>
+                                            <div className="h-2 bg-gray-200 rounded w-5/6"></div>
+                                            <div className="h-2 bg-gray-200 rounded w-4/6"></div>
+                                        </div>
+                                        <div className="flex gap-2">
+                                            <div className="h-6 bg-gray-200 rounded-full w-16"></div>
+                                            <div className="h-6 bg-gray-200 rounded-full w-20"></div>
+                                            <div className="h-6 bg-gray-200 rounded-full w-14"></div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -208,7 +153,7 @@ function LandingPage() {
                         <div className={landingPageStyles.featuresHeader}>
                             <h2 className={landingPageStyles.featuresTitle}>
                                 Why Choose <span className={landingPageStyles.featuresTitleGradient}>
-                                    ResumeBuilder?
+                                    RESUMEFLOW?
                                 </span>
                             </h2>
                             <p className={landingPageStyles.featuresDescription}>
@@ -219,22 +164,22 @@ function LandingPage() {
                         <div className={landingPageStyles.featuresGrid}>
                             {[
                                 {
-                                    icon: <Zap className={landingPageStyles.featureIcon} />,
-                                    title: "Lightning Fast",
+                                    icon: <CheckCircle className={landingPageStyles.featureIcon} />,
+                                    title: "EASY DRAG & DROP",
                                     description: "Create professional resumes in under 5 minutes with our streamlined process",
                                     gradient: landingPageStyles.featureIconViolet,
                                     bg: landingPageStyles.featureCardViolet
                                 },
                                 {
-                                    icon: <LayoutTemplate className={landingPageStyles.featureIcon} />,
-                                    title: "Pro Templates",
+                                    icon: <Rocket className={landingPageStyles.featureIcon} />,
+                                    title: "EXPERT TEMPLATES",
                                     description: "Choose from dozens of recruiter-approved, industry-specific templates",
                                     gradient: landingPageStyles.featureIconFuchsia,
                                     bg: landingPageStyles.featureCardFuchsia
                                 },
                                 {
-                                    icon: <Download className={landingPageStyles.featureIcon} />,
-                                    title: "Instant Export",
+                                    icon: <Shield className={landingPageStyles.featureIcon} />,
+                                    title: "HR-APPROVED",
                                     description: "Download high-quality PDFs instantly with perfect formatting",
                                     gradient: landingPageStyles.featureIconOrange,
                                     bg: landingPageStyles.featureCardOrange
@@ -274,7 +219,7 @@ function LandingPage() {
                                 </p>
                                 <button className={landingPageStyles.ctaButton} onClick={handleCTA}>
                                     <div className={landingPageStyles.ctaButtonOverlay}></div>
-                                    <span className={landingPageStyles.ctaButtonText}>Start Building Now</span>
+                                    <span className={landingPageStyles.ctaButtonText}>CREATE MY RESUME - IT'S FREE!</span>
                                 </button>
                             </div>
                         </div>
@@ -284,12 +229,19 @@ function LandingPage() {
 
             <footer className={landingPageStyles.footer}>
                 <div className={landingPageStyles.footerContainer}>
-                    <p className={landingPageStyles.footerText}>
-                        Crafted with <span className={landingPageStyles.footerHeart}>❤️</span> by{' '}
-                        <a href="https://www.linkedin.com/in/yogita-joshi30/" target='_blank' className={landingPageStyles.footerLink}>
-                            Yogita Joshi
-                        </a>
-                    </p>
+                    <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
+                        <div className="flex gap-6 text-sm text-gray-600">
+                            <a href="#" className="hover:text-gray-900 transition-colors">About Us</a>
+                            <a href="#" className="hover:text-gray-900 transition-colors">Support</a>
+                            <a href="#" className="hover:text-gray-900 transition-colors">Privacy Policy</a>
+                        </div>
+                        <div className="flex gap-4">
+                            <a href="#" className="text-gray-600 hover:text-gray-900 transition-colors">Facebook</a>
+                            <a href="#" className="text-gray-600 hover:text-gray-900 transition-colors">Twitter</a>
+                            <a href="#" className="text-gray-600 hover:text-gray-900 transition-colors">YouTube</a>
+                            <a href="#" className="text-gray-600 hover:text-gray-900 transition-colors">Instagram</a>
+                        </div>
+                    </div>
                 </div>
             </footer>
 

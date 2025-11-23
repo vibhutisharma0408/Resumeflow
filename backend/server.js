@@ -11,7 +11,7 @@ const app = express();
 
 // CORS setup: allow both local dev and deployed frontend
 const allowedOrigins = [
-    process.env.FRONTEND_URL_LOCAL || "http://localhost:5176",
+    process.env.FRONTEND_URL_LOCAL || "http://localhost:5173",
     process.env.FRONTEND_URL_DEPLOYED
 ].filter(Boolean); // Remove undefined values
 
