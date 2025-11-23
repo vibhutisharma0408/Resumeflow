@@ -12,8 +12,8 @@ Fullstack
 
 ## Deployed App
 
-- Frontend: https://resume-builder-frontend-5yy4.onrender.com
-- Backend: https://resume-builder-backend-0x50.onrender.com
+- Frontend: 
+- Backend:
 - Database: MongoDB Atlas (cloud-hosted)
 
 ## Directory Structure
@@ -67,7 +67,7 @@ Clone the repository and install dependencies for both frontend and backend.
 # Clone repo
 
 ```bash
-git clone https://github.com/yogitaj-30/Resume-Builder.git
+git clone https://github.com/vibhutisharma0408/Resumeflow.git
 cd Resume-Builder
 ```
 
