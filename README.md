@@ -12,8 +12,8 @@ Fullstack
 
 ## Deployed App
 
-- Frontend: 
-- Backend:
+- Frontend: https://resumeflow-frontend.onrender.com/
+- Backend: https://resumeflow-backend-i2yb.onrender.com
 - Database: MongoDB Atlas (cloud-hosted)
 
 ## Directory Structure
